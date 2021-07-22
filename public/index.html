@@ -39,7 +39,7 @@
 	};
 	var bufferlayer=L.geoJSON(buffer20000)
 	var overlayMaps = {
-        "Buffer_20000m": bufferLayer,
+        "Buffer_20000m": bufferlayer,
 		"Buffer_20000m result": L.geoJSON(buffer22000_result)
 	};
 	map.fitBounds(bufferlayer.getBounds());
