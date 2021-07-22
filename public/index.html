@@ -15,7 +15,7 @@
    #mapid2 { height: 180px; }    
    #mapid3 { height: 180px; }
    </style>
-   <script src="../input/Buffer_20000/Buffer20000m_normalized.js"></script>
+   <script src="../input/Buffer_20000/Buffer_20000m_normalized.js"></script>
    <script src="../input/Point_10000/points_10000.js"></script>
    <script src="../input/Points_1500/points_1500_normalized.js"></script>
    <script src="../result/Buffer_22000/Buff22000.js"></script>
@@ -38,8 +38,8 @@
         "OSM": layer
 	};
 	var overlayMaps = {
-        "Buffer_2000m": buffer20000,
-		"Buffer_2000m result": buffer22000_result
+        "Buffer_20000m": buffer20000,
+		"Buffer_20000m result": buffer22000_result
 	};
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
 	L.control.scale({
@@ -60,7 +60,7 @@
         "OSM": layer
 	};
 	var overlayMaps = {
-        "Points_10000": points10000
+        "Points_10000": points_10000
 	};
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map2);
 	L.control.scale({
