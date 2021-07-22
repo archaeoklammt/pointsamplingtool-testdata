@@ -1,0 +1,1 @@
+# pointsamplingtool-testdata
