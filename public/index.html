@@ -9,8 +9,11 @@
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+   <script id="buffer20000" type="application/json" src="input/Buffer_20000/Buffer20000m_normalized.geojson"></script>
    <style>
-   #mapid { height: 180px; }
+   #mapid { height: 180px; }    
+   #mapid2 { height: 180px; }    
+   #mapid3 { height: 180px; }
    </style>
   </head>
 <body style="height:100%">
@@ -21,6 +24,7 @@
 
    <div id="mapid">
    <script>
+    var data = JSON.parse(document.getElementById('buffer20000').textContent);
 	var map = L.map('mapid').setView([51.505, -0.09], 13);
 	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
