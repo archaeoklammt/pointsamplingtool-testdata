@@ -11,9 +11,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
    <style>
-   #mapid { height: 250px; }    
-   #mapid2 { height: 250px; }    
-   #mapid3 { height: 250px; }
+   #mapid { height: 400px; }    
+   #mapid2 { height: 400px; }    
+   #mapid3 { height: 400px; }
    </style>
    <script src="../input/Buffer_20000/Buffer_20000m_normalized.js"></script>
    <script src="../input/Point_10000/points_10000.js"></script>
@@ -27,7 +27,7 @@
 	<div class="row">
 	    <h1 align="center">Test data for PointSampling Tool Review</h1>
 		<div id="textdiv" class="col-md-4">
-
+	<h3>Testcase 1</h3>
    <div id="mapid">
    <script>
 	var map = L.map('mapid').setView([51.505, -0.09], 13);
@@ -51,11 +51,13 @@
 	}).addTo(map);	
    </script>
    </div><br/>
+   	Logs:<br/>
    <code id="log1">
 	 
 	</code>
    </div>
    <div id="textdiv" class="col-md-4">
+	<h3>Testcase 2</h3>
      <div id="mapid2">
 	 <script>
 	 	var map2 = L.map('mapid2').setView([51.505, -0.09], 13);
@@ -78,11 +80,13 @@
 	}).addTo(map2);	
 	</script>
 	 </div><br/>
+	 Logs:<br/>
 	 <code id="log2">
 	 
 	 </code>
 	</div>
 	<div id="textdiv" class="col-md-4">
+		<h3>Testcase 3</h3>
        <div id="mapid3">
 	   <script>
 	 	var map3 = L.map('mapid3').setView([51.505, -0.09], 13);
@@ -106,11 +110,35 @@
 	}).addTo(map);
 	</script>
 	 </div><br/>
+	 Logs:<br/>
 	  <code id="log3">
 	 
 	 </code>
 	</div>	 
 	 </div>
 	</div>
+<script>
+$.ajax({
+            url: "../log/Buffer_20000m.log",
+            async: true,
+            success: function (data){
+                $('#log1').html(data)
+            }
+        });
+$.ajax({
+            url: "../log/point_10000m.log",
+            async: true,
+            success: function (data){
+                $('#log2').html(data)
+            }
+        });
+$.ajax({
+            url: "../log/points_1500m.log",
+            async: true,
+            success: function (data){
+                $('#log2').html(data)
+            }
+        });
+</script>
   </body>
 </html>
