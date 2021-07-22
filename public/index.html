@@ -1,23 +1,30 @@
 <html>
 <head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
    <style>
    #mapid { height: 180px; }
    </style>
   </head>
-  <body>
-    <h1>Test data for PointSampling Tool Review</h1>
+<body style="height:100%">
+  {%- include header.html -%}
+  <div class="container-fluid" style="height:100%">
+	<div class="row">
+	    <h1>Test data for PointSampling Tool Review</h1>
+		<div id="textdiv" class="col-md-3">
+
    <div id="mapid">
    <script>
-   var map = L.map('mapid').setView([51.505, -0.09], 13);
-var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-});
+	var map = L.map('mapid').setView([51.505, -0.09], 13);
+	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	});
 	var baseMaps = {
         "OSM": layer
 	};
@@ -25,8 +32,47 @@ var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
-}).addTo(map);	
+	}).addTo(map);	
    </script>
    </div>
+   </div>
+   <div id="textdiv" class="col-md-3">
+     <div id="mapid2">
+	 <script>
+	 	var map2 = L.map('mapid2').setView([51.505, -0.09], 13);
+	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	});
+	var baseMaps = {
+        "OSM": layer
+	};
+	baseMaps["OSM"].addTo(map);
+	L.control.scale({
+	position: 'bottomright',
+	imperial: false
+	}).addTo(map2);	
+	</script>
+	 </div>
+	</div>
+	<div id="textdiv" class="col-md-3">
+       <div id="mapid3">
+	   <script>
+	 	var map3 = L.map('mapid3').setView([51.505, -0.09], 13);
+	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	});
+	var baseMaps = {
+        "OSM": layer
+	};
+	baseMaps["OSM"].addTo(map);
+	L.control.scale({
+	position: 'bottomright',
+	imperial: false
+	}).addTo(map);
+	</script>
+	 </div>
+	</div>	 
+	 </div>
+	</div>
   </body>
 </html>
