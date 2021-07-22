@@ -44,6 +44,7 @@
 	};
 	map.fitBounds(bufferlayer.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
+	baseMaps["OSM"].addTo(map);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
@@ -70,6 +71,7 @@
 	};
 	map2.fitBounds(pointslayer.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map2);
+	baseMaps["OSM"].addTo(map2);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
@@ -95,6 +97,7 @@
         "Buffer_1500m": bufferlayer2,
 		"Points 1500m result": L.geoJSON(points_1500_result)
 	};
+	baseMaps["OSM"].addTo(map3);
 	map3.fitBounds(bufferlayer2.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map3);
 	L.control.scale({
