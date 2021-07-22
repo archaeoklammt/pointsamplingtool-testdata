@@ -9,12 +9,19 @@
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
    <script id="buffer20000" type="application/json" src="input/Buffer_20000/Buffer20000m_normalized.geojson"></script>
    <style>
    #mapid { height: 180px; }    
    #mapid2 { height: 180px; }    
    #mapid3 { height: 180px; }
    </style>
+   <script src="input/Buffer_20000/Buffer20000m_normalized.js"></script>
+   <script src="input/Point_10000/points_10000.js"></script>
+   <script src="input/Points_1500/points_1500_normalized.js"></script>
+   <script src="result/Buffer_22000/Buff22000.js"></script>
+   <!--<script src="result/Point_10000/points_10000.js"></script>-->
+   <script src="input/Points_1500/pst_1500_Buff22000.js"></script>
   </head>
 <body style="height:100%">
   <div class="container-fluid" style="height:100%">
@@ -32,11 +39,17 @@
 	var baseMaps = {
         "OSM": layer
 	};
-	baseMaps["OSM"].addTo(map);
+	var overlayMaps = {
+        "Buffer_2000m": buffer20000,
+		"Buffer_2000m result": buffer22000_result
+	};
+	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
 	}).addTo(map);	
+	L.geoJSON(states, {
+	}
    </script>
    </div>
    </div>
@@ -50,7 +63,10 @@
 	var baseMaps = {
         "OSM": layer
 	};
-	baseMaps["OSM"].addTo(map);
+	var overlayMaps = {
+        "Points_10000": points10000
+	};
+	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map2);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
@@ -68,7 +84,11 @@
 	var baseMaps = {
         "OSM": layer
 	};
-	baseMaps["OSM"].addTo(map);
+	var overlayMaps = {
+        "Buffer_1500m": points_1500,
+		"Points 1500m result": points_1500_result
+	};
+	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map3);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
