@@ -26,7 +26,7 @@
   <div class="container-fluid" style="height:100%">
 	<div class="row">
 	    <h1>Test data for PointSampling Tool Review</h1>
-		<div id="textdiv" class="col-md-3">
+		<div id="textdiv" class="col-md-4">
 
    <div id="mapid">
    <script>
@@ -37,10 +37,12 @@
 	var baseMaps = {
         "OSM": layer
 	};
+	var bufferlayer=L.geoJSON(buffer20000)
 	var overlayMaps = {
-        "Buffer_20000m": L.geoJSON(buffer20000),
+        "Buffer_20000m": bufferLayer,
 		"Buffer_20000m result": L.geoJSON(buffer22000_result)
 	};
+	map.fitBounds(bufferlayer.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
 	L.control.scale({
 	position: 'bottomright',
@@ -49,7 +51,7 @@
    </script>
    </div>
    </div>
-   <div id="textdiv" class="col-md-3">
+   <div id="textdiv" class="col-md-4">
      <div id="mapid2">
 	 <script>
 	 	var map2 = L.map('mapid2').setView([51.505, -0.09], 13);
@@ -59,9 +61,11 @@
 	var baseMaps = {
         "OSM": layer
 	};
+	var pointslayer=L.geoJSON(points_10000)
 	var overlayMaps = {
-        "Points_10000": L.geoJSON(points_10000)
+        "Points_10000": pointslayer
 	};
+	map2.fitBounds(pointslayer.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map2);
 	L.control.scale({
 	position: 'bottomright',
@@ -70,7 +74,7 @@
 	</script>
 	 </div>
 	</div>
-	<div id="textdiv" class="col-md-3">
+	<div id="textdiv" class="col-md-4">
        <div id="mapid3">
 	   <script>
 	 	var map3 = L.map('mapid3').setView([51.505, -0.09], 13);
@@ -80,10 +84,12 @@
 	var baseMaps = {
         "OSM": layer
 	};
+	var bufferlayer2=L.geoJSON(points_1500)
 	var overlayMaps = {
-        "Buffer_1500m": L.geoJSON(points_1500),
+        "Buffer_1500m": bufferlayer2,
 		"Points 1500m result": L.geoJSON(points_1500_result)
 	};
+	map3.fitBounds(bufferlayer2.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map3);
 	L.control.scale({
 	position: 'bottomright',
