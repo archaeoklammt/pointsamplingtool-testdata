@@ -52,7 +52,7 @@
    </script>
    </div><br/>
    	Logs:<br/>
-   <code id="log1">
+   <code id="log1" style="overflow:auto;">
 	 
 	</code>
    </div>
@@ -81,7 +81,7 @@
 	</script>
 	 </div><br/>
 	 Logs:<br/>
-	 <code id="log2">
+	 <code id="log2" style="overflow:auto;">
 	 
 	 </code>
 	</div>
@@ -111,7 +111,7 @@
 	</script>
 	 </div><br/>
 	 Logs:<br/>
-	  <code id="log3">
+	  <code id="log3" style="overflow:auto;">
 	 
 	 </code>
 	</div>	 
@@ -136,7 +136,7 @@ $.ajax({
             url: "../log/points_1500m.log",
             async: true,
             success: function (data){
-                $('#log2').html(data)
+                $('#log3').html(data)
             }
         });
 </script>
