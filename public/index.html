@@ -38,8 +38,8 @@
         "OSM": layer
 	};
 	var overlayMaps = {
-        "Buffer_20000m": buffer20000,
-		"Buffer_20000m result": buffer22000_result
+        "Buffer_20000m": L.geoJSON(buffer20000),
+		"Buffer_20000m result": L.geoJSON(buffer22000_result)
 	};
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
 	L.control.scale({
@@ -60,7 +60,7 @@
         "OSM": layer
 	};
 	var overlayMaps = {
-        "Points_10000": points_10000
+        "Points_10000": L.geoJSON(points_10000)
 	};
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map2);
 	L.control.scale({
@@ -81,8 +81,8 @@
         "OSM": layer
 	};
 	var overlayMaps = {
-        "Buffer_1500m": points_1500,
-		"Points 1500m result": points_1500_result
+        "Buffer_1500m": L.geoJSON(points_1500),
+		"Points 1500m result": L.geoJSON(points_1500_result)
 	};
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map3);
 	L.control.scale({
