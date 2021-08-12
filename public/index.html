@@ -19,7 +19,7 @@
    <script src="../input/Points_10000/points_10000m.js"></script>
    <script src="../input/Points_1500/points_1500m.js"></script>
    <script src="../result/Points_10000/pts10000_Buff22000.js"></script>
-   <script src="../result/Points_1500/pst_1500_Buff22000.js"></script>
+   <script src="../result/Points_1500/pts_1500_Buff22000.js"></script>
   </head>
 <body style="height:100%">
   <div class="container-fluid" style="height:100%">
@@ -38,9 +38,9 @@
 	};
 	var bufferlayer=L.geoJSON(buffer20000)
 	var overlayMaps = {
-  "Buffer_20000m": bufferlayer,
-		  "Points_10000 input": L.geoJSON(Points_10000_input),
-      "Points_1500 input": L.geoJSON(Points_1500_input)
+  	"Buffer_20000m": bufferlayer,
+		  "Points 10000m input": L.geoJSON(points_10000m),
+      		  "Points_1500m input": L.geoJSON(points_1500)
 	};
 	map.fitBounds(bufferlayer.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
@@ -70,7 +70,7 @@
 	var baseMaps = {
         "OSM": layer
 	};
-	var pointslayer=L.geoJSON(Points_10000)
+	var pointslayer=L.geoJSON(pts10000_Buff2200)
 	var overlayMaps = {
         "Points_10000 result": pointslayer
 	};
@@ -86,9 +86,10 @@
 <br/>
 	 Logs:<br/>
 	 <code id="log2" style="overflow:auto;height:400px">
-
 	 </code>
 	</div>
+		
+		
 	<div id="textdiv" class="col-md-4">
 		<h3>Testcase 2</h3>
        <div id="mapid3">
@@ -100,12 +101,12 @@
 	var baseMaps = {
         "OSM": layer
 	};
-	var bufferlayer2=L.geoJSON(Points_1500)
+	var pointslayer2=L.geoJSON(points_1500_result)
 	var overlayMaps = {
-        "points_1500m result": pointslayer
+        "Points_1500m result": pointslayer2
 	};
 	baseMaps["OSM"].addTo(map3);
-	map3.fitBounds(bufferlayer2.getBounds());
+	map3.fitBounds(pointslayer2.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map3);
 	L.control.scale({
 	position: 'bottomright',
