@@ -1,6 +1,6 @@
-{
+var points_1500_result={
 "type": "FeatureCollection",
-"name": "pts1500_Buff22000",
+"name": "pts1500_Buff2000",
 "features": [
 { "type": "Feature", "properties": { "fid": 1, "id": 24 }, "geometry": { "type": "Point", "coordinates": [ 10.520203855261782, 53.532393265549722 ] } },
 { "type": "Feature", "properties": { "fid": 2, "id": 24 }, "geometry": { "type": "Point", "coordinates": [ 10.533678584523575, 53.532393265549722 ] } },
