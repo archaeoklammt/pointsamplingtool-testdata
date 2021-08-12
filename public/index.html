@@ -54,11 +54,15 @@
 	map.fitBounds(bufferlayer.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
 	baseMaps["OSM"].addTo(map);
-
+	L.control.scale({
+	position: 'bottomright',
+	imperial: false
+	}).addTo(map);
    </script>
    </div>Please choose a layer from the layer menu to display....<br/>
    <a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/input/Buffer_20000" target="_blank">[Input data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/result/Points_10000" target="_blank">[Result data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/blob/main/log/Points_10000.log" target="_blank">[Log]</a><br/>
-   	Logs:<br/>
+</br>
+	Logs:<br/>
    <code id="log1" style="overflow:auto;height:400px">
 
 	</code>
@@ -89,6 +93,29 @@
 	}).addTo(map2);
 	</script>
 	 </div><br/><a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/input/Point_10000" target="_blank">[Input data]</a>&nbsp;<a href="#" target="_blank">[Result data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/blob/main/log/point_10000m.log"  target="_blank">[Log]</a><br/>
+</br>Attributes of Points_10000m result </br>
+<table style="width:100%">
+  <tr>
+    <td>"fid" - ID of feature resulting from the point sampling</td>
+    <td>"id" - ID of the layer with sampling points</td> 
+    <td>"id22" - ID of the layer to get values from</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>48</td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+  </tr>
+  <tr>
+    <td>360</td>
+    <td>359</td>
+    <td>359</td>
+  </tr>
+</table>
 <br/>
 	 Logs:<br/>
 	 <code id="log2" style="overflow:auto;height:400px">
@@ -118,14 +145,12 @@
 	}).addTo(map3);
 	</script>
 	 </div><br/><br/><a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/input/Points_1500" target="_blank">[Input data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/result/Points_1500" target="_blank">[Result data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/blob/main/log/points_1500m.log" target="_blank">[Log]</a><br/>    
-
 </br>Attributes of Points_1500m result </br>
-
-<table style="width:100%">
+<!--<table style="width:100%">
   <tr>
-    <th>"fid" - ID of feature resulting from the point sampling</th>
-    <th>"id" - ID of the layer with sampling points</th> 
-    <th>"id22" - ID of the layer to get values from</th>
+    <td>"fid" - ID of feature resulting from the point sampling</td>
+    <td>"id" - ID of the layer with sampling points</td> 
+    <td>"id22" - ID of the layer to get values from</td>
   </tr>
   <tr>
     <td>1</td>
@@ -137,9 +162,12 @@
     <td>...</td>
     <td>...</td>
   </tr>
-</table>
-
-
+  <tr>
+    <td>360</td>
+    <td>359</td>
+    <td>359</td>
+  </tr>
+</table>-->
 <br/>
 	 Logs:<br/>
 	  <code id="log3" style="overflow:auto;height:400px">
