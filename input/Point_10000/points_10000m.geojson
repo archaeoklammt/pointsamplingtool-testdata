@@ -1,6 +1,6 @@
-var points_10000={
+{
 "type": "FeatureCollection",
-"name": "points_10000_normalized",
+"name": "points_10000m",
 "features": [
 { "type": "Feature", "properties": { "id": 0 }, "geometry": { "type": "Point", "coordinates": [ 10.59656065441194, 53.486984887406514 ] } },
 { "type": "Feature", "properties": { "id": 1 }, "geometry": { "type": "Point", "coordinates": [ 10.686392182823894, 53.486984887406514 ] } },

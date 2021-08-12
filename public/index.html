@@ -11,8 +11,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
    <style>
-   #mapid { height: 400px; }    
-   #mapid2 { height: 400px; }    
+   #mapid { height: 400px; }
+   #mapid2 { height: 400px; }
    #mapid3 { height: 400px; }
    </style>
    <script src="../input/Buffer_20000/Buffer_20000m_normalized.js"></script>
@@ -27,7 +27,7 @@
 	<div class="row">
 	    <h1 align="center">Test data for PointSampling Tool Review</h1>
 		<div id="textdiv" class="col-md-4">
-	<h3>Testcase 1</h3>
+	<h3>SetUp</h3>
    <div id="mapid">
    <script>
 	var map = L.map('mapid').setView([51.505, -0.09], 13);
@@ -40,7 +40,8 @@
 	var bufferlayer=L.geoJSON(buffer20000)
 	var overlayMaps = {
         "Buffer_20000m": bufferlayer,
-		"Buffer_20000m result": L.geoJSON(buffer22000_result)
+		"points_10000m": L.geoJSON(points_10000m),
+    "points_1500m": L.geoJSON(points_1500m)
 	};
 	map.fitBounds(bufferlayer.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
@@ -48,29 +49,31 @@
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
-	}).addTo(map);	
+	}).addTo(map);
    </script>
    </div>Please choose a layer from the layer menu to display....<br/>
    <a href="https://github.com/Research-Squirrel-Engineers/pointsamplingtool-testdata/tree/main/input/Buffer_20000" target="_blank">[Input data]</a>&nbsp;<a href="https://github.com/Research-Squirrel-Engineers/pointsamplingtool-testdata/tree/main/result/Buffer_22000" target="_blank">[Result data]</a>&nbsp;<a href="https://github.com/Research-Squirrel-Engineers/pointsamplingtool-testdata/blob/main/log/Buffer_20000m.log" target="_blank">[Log]</a><br/>
    	Logs:<br/>
    <code id="log1" style="overflow:auto;height:400px">
-	 
+
 	</code>
    </div>
+
+
    <div id="textdiv" class="col-md-4">
-	<h3>Testcase 2</h3>
+	<h3>Testcase 1</h3>
      <div id="mapid2">
 	 <script>
-	 	var map2 = L.map('mapid2').setView([51.505, -0.09], 13);
+  var map2 = L.map('mapid2').setView([51.505, -0.09], 13);
 	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	});
 	var baseMaps = {
         "OSM": layer
 	};
-	var pointslayer=L.geoJSON(points_10000)
+	var pointslayer=L.geoJSON(pts10000_Buff22000)
 	var overlayMaps = {
-        "Points_10000": pointslayer
+        "points_10000m_result": pointslayer
 	};
 	map2.fitBounds(pointslayer.getBounds());
 	var layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map2);
@@ -78,17 +81,17 @@
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
-	}).addTo(map2);	
+	}).addTo(map2);
 	</script>
 	 </div><br/><a href="https://github.com/Research-Squirrel-Engineers/pointsamplingtool-testdata/tree/main/input/Point_10000" target="_blank">[Input data]</a>&nbsp;<a href="#" target="_blank">[Result data]</a>&nbsp;<a href="https://github.com/Research-Squirrel-Engineers/pointsamplingtool-testdata/blob/main/log/point_10000m.log"  target="_blank">[Log]</a><br/>
 <br/>
 	 Logs:<br/>
 	 <code id="log2" style="overflow:auto;height:400px">
-	 
+
 	 </code>
 	</div>
 	<div id="textdiv" class="col-md-4">
-		<h3>Testcase 3</h3>
+		<h3>Testcase 2</h3>
        <div id="mapid3">
 	   <script>
 	 	var map3 = L.map('mapid3').setView([51.505, -0.09], 13);
@@ -98,10 +101,9 @@
 	var baseMaps = {
         "OSM": layer
 	};
-	var bufferlayer2=L.geoJSON(points_1500)
+	var bufferlayer2=L.geoJSON(pst_1500_Buff22000)
 	var overlayMaps = {
-        "Buffer_1500m": bufferlayer2,
-		"Points 1500m result": L.geoJSON(points_1500_result)
+        "points_1500m_result": bufferlayer2
 	};
 	baseMaps["OSM"].addTo(map3);
 	map3.fitBounds(bufferlayer2.getBounds());
@@ -115,9 +117,9 @@
 <br/>
 	 Logs:<br/>
 	  <code id="log3" style="overflow:auto;height:400px">
-	 
+
 	 </code>
-	</div>	 
+	</div>
 	 </div>
 	</div>
 <script>
