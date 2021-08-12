@@ -15,11 +15,11 @@
    #mapid2 { height: 400px; }
    #mapid3 { height: 400px; }
    </style>
-   <script src="../input/Buffer_20000/Buffer_20000m.js"></script>
+   <script src="../input/Buffer_22000/Buffer_22000m.js"></script>
    <script src="../input/Points_10000/points_10000m.js"></script>
    <script src="../input/Points_1500/points_1500m.js"></script>
    <script src="../result/Points_10000/pts10000_Buff22000.js"></script>
-   <script src="../result/Points_1500/pts_1500_Buff22000.js"></script>
+   <script src="../result/Points_1500/pts1500_Buff22000.js"></script>
  <style>
 	table, th, td {
  	 border: 1px solid black;
@@ -45,9 +45,9 @@
 	var baseMaps = {
         "OSM": layer
 	};
-	var bufferlayer=L.geoJSON(buffer20000)
+	var bufferlayer=L.geoJSON(buffer22000)
 	var overlayMaps = {
-  	"Buffer_20000m": bufferlayer,
+  	"Buffer_22000m": bufferlayer,
 		  "Points 10000m input": L.geoJSON(points_10000m),
       		  "Points_1500m input": L.geoJSON(points_1500)
 	};
@@ -60,7 +60,7 @@
 	}).addTo(map);
    </script>
    </div>Please choose a layer from the layer menu to display....<br/>
-   <a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/input/Buffer_20000" target="_blank">[Input data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/result/Points_10000" target="_blank">[Result data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/blob/main/log/Points_10000.log" target="_blank">[Log]</a><br/>
+   <a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/input/Buffer_22000" target="_blank">[Input data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/result/Points_10000" target="_blank">[Result data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/blob/main/log/Points_10000.log" target="_blank">[Log]</a><br/>
 </br>
 	Logs:<br/>
    <code id="log1" style="overflow:auto;height:400px">
@@ -97,22 +97,18 @@
 <table style="width:100%">
   <tr>
     <td>"fid" - ID of feature resulting from the point sampling</td>
-    <td>"id" - ID of the layer with sampling points</td> 
     <td>"id22" - ID of the layer to get values from</td>
   </tr>
   <tr>
-    <td>1</td>
     <td>0</td>
-    <td>48</td>
+    <td>24</td>
   </tr>
   <tr>
-    <td>...</td>
     <td>...</td>
     <td>...</td>
   </tr>
   <tr>
     <td>360</td>
-    <td>359</td>
     <td>359</td>
   </tr>
 </table>
@@ -146,28 +142,24 @@
 	</script>
 	 </div><br/><br/><a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/input/Points_1500" target="_blank">[Input data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/tree/main/result/Points_1500" target="_blank">[Result data]</a>&nbsp;<a href="https://github.com/archaeoklammt/pointsamplingtool-testdata/blob/main/log/points_1500m.log" target="_blank">[Log]</a><br/>    
 </br>Attributes of Points_1500m result </br>
-<!--<table style="width:100%">
-  <tr>
-    <td>"fid" - ID of feature resulting from the point sampling</td>
-    <td>"id" - ID of the layer with sampling points</td> 
-    <td>"id22" - ID of the layer to get values from</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>0</td>
-    <td>48</td>
-  </tr>
-  <tr>
-    <td>...</td>
-    <td>...</td>
-    <td>...</td>
-  </tr>
-  <tr>
-    <td>360</td>
-    <td>359</td>
-    <td>359</td>
-  </tr>
-</table>-->
+	<table style="width:100%">
+  	 <tr>
+    	  <td>"fid" - ID of feature resulting from the point sampling</td>
+    	  <td>"id22" - ID of the layer to get values from</td>
+  	 </tr>
+  	 <tr>
+    	  <td>1</td>
+    	  <td>24</td>
+  	 </tr>
+  	 <tr>
+    	  <td>...</td>
+    	  <td>...</td>
+  	 </tr>
+  	 <tr>
+    	  <td>16905</td>
+    	  <td>359</td>
+  	 </tr>
+	</table>
 <br/>
 	 Logs:<br/>
 	  <code id="log3" style="overflow:auto;height:400px">
@@ -178,7 +170,7 @@
 	</div>
 <script>
 $.ajax({
-            url: "../log/Buffer_20000m.log",
+            url: "../log/Buffer_22000m.log",
             async: true,
             success: function (data){
                 $('#log1').html(data)
